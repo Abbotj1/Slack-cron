@@ -1,0 +1,19 @@
+import os
+import time
+import time
+from slack_sdk import WebClient
+from slack_sdk.errors import SlackApiError
+
+client = WebClient(token=os.environ.get("SLACK_BOT_TOKEN"))
+
+Message_Text = "Checking in"
+
+try:
+    Result = client.chat_scheduleMessage(
+        token = client
+        channel = "C04Q2D4FA5C"
+        post_at = 1676735132
+    )
+    print("Message sent")
+except SlackApiError as e:
+    print("Error sending message: {e}")
